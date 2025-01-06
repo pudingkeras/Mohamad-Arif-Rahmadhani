@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>About/Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background-color: #000;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: relative;
+            height: 10vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 50px;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #00bcd4;
+        }
+
+        .gallery-section {
+            padding: 20px;
+            background: url('1.jpeg') no-repeat center center/cover;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #333;
+        }
+
+        .gallery-item p {
+            margin: 10px 0 0;
+            font-size: 16px;
+        }
+
+        footer {
+            background-color: #1A5276;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer .social-links a {
+            color: #A2D9CE;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        footer .social-links a:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;"><span style="color: #ffffff;">My</span><span style="color: #1A5276; background-color: #ffffff; padding: 2px 5px; border-radius: 3px;">Bloom</span></a>
+            </div>             
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="about.html">About/Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="gallery-section">
+        <h2 style="text-align: center;">Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="7.jpg" alt="Bunga Matahari">
+                <p>Bunga Matahari</p>
+            </div>
+            <div class="gallery-item">
+                <img src="4.jpg" alt="Bunga Lili">
+                <p>Bunga Lili</p>
+            </div>
+            <div class="gallery-item">
+                <img src="3.jpg" alt="Kembang Sepatu">
+                <p>Kembang Sepatu Warna Biru Muda (Langka)</p>
+            </div>
+            <div class="gallery-item">
+                <img src="2.jpg" alt="Kembang Sepatu">
+                <p>Kembang Sepatu Merah dan Kuning</p>
+            </div>
+            <div class="gallery-item">
+                <img src="5.jpg" alt="Bunga Aster">
+                <p>Bunga Aster</p>
+            </div>
+            <div class="gallery-item">
+                <img src="6.jpg" alt="Bunga Mawar">
+                <p>Bunga Mawar</p>
+            </div>
+        </div>
+
+        <h2 style="text-align: center;">Video</h2>
+        <div style="text-align: center;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/92pRxWufd4k?si=LdnxvkywIFduNz4W" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Mohamad Arif Rahmadhani. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank">Facebook</a> |
+            <a href="https://twitter.com" target="_blank">Twitter</a> |
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background-color: #000;
+            margin: 0;
+            min-height: 100vh; /* Memastikan konten mencakup viewport */
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            background-color:#000;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 50px;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #00bcd4;
+        }
+
+        #contact {
+            text-align: center;
+            padding: 50px;
+            background: url('1.jpeg') no-repeat center center/cover;
+            flex-grow: 1; /* Pastikan konten ini memenuhi ruang */
+        }
+
+        #contact h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        #contact form p {
+            margin: 20px 0;
+        }
+
+        #contact input[type="text"],
+        #contact input[type="email"] {
+            padding: 10px;
+            width: 200px;
+            border: none;
+            border-radius: 25px;
+        }
+
+        #contact button {
+            padding: 10px 25px;
+            background-color: #1A5276;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        #contact button:hover {
+            background-color: #1A5276;
+        }
+
+        footer {
+            background-color: #1A5276;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto; /* Pastikan footer tetap di bawah */
+        }
+
+        footer .social-links a {
+            color: #A2D9CE;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        footer .social-links a:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none; color: inherit;"><span style="color: #ffffff;">My</span><span style="color: #1A5276; background-color: #ffffff; padding: 2px 5px; border-radius: 3px;">Bloom</span></a>
+        </div>         
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="profil.html">Profil</a></li>
+            <li><a href="about.html">About/Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="contact">
+        <h2>Stay With Me</h2>
+        <form id="contactForm" class="form-container">
+            <input type="text" id="name" name="name" placeholder="Nama">
+            <input type="email" id="email" name="email" placeholder="Email">
+            <div>
+                <label>Jenis Kelamin:</label><br>
+                <input type="radio" id="male" name="gender" value="Laki-laki">
+                <label for="male">Laki-laki</label>
+                <input type="radio" id="female" name="gender" value="Perempuan">
+                <label for="female">Perempuan</label>
+            </div>
+            <select id="subject" name="subject">
+                <option value="general">Umum</option>
+                <option value="support">Dukungan</option>
+                <option value="feedback">Feedback</option>
+            </select>
+            <div>
+                <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+                <label for="subscribe">Langganan berita terbaru</label>
+            </div>
+            <button type="button" onclick="submitForm()">Kirim</button>
+        </form>
+    </section>
+
+    <script>
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const gender = document.querySelector('input[name="gender"]:checked')?.value;
+            const subject = document.getElementById('subject').value;
+            const subscribe = document.getElementById('subscribe').checked;
+
+            if (!name || !email) {
+                alert("Nama dan Email harus diisi!");
+                return;
+            }
+
+            let message = `Nama: ${name}\nEmail: ${email}\nGender: ${gender || "Tidak disebutkan"}\nTopik: ${subject}`;
+            message += subscribe ? "\nLangganan: Ya" : "\nLangganan: Tidak";
+
+            if (confirm("Apakah data ini sudah benar?\n\n" + message)) {
+                alert("Formulir berhasil dikirim!");
+            } else {
+                alert("Silakan periksa kembali data Anda.");
+            }
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Mohamad Arif Rahmadhani. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank">Facebook</a> |
+            <a href="https://twitter.com" target="_blank">Twitter</a> |
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>
